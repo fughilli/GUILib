@@ -4,12 +4,24 @@
 #include "Energia.h"
 #include "GUI.h"
 
-#define LABEL_BACKGROUND_COLOR blackColour
-#define LABEL_TEXT_COLOR       whiteColour
+#define LABEL_DEFAULT_BACKGROUND_COLOR GUI_DEFAULT_BACKGROUND_COLOR
+#define LABEL_DEFAULT_TEXT_COLOR       GUI_DEFAULT_FOREGROUND_COLOR
+
+#define LABEL_DEFAULT_TEXT_SIZE               SMALL
+
+typedef enum
+{
+    SMALL,
+    MEDIUM,
+    LARGE,
+    XLARGE
+}
+TextSize_e;
 
 class Label : public GUIElement
 {
 protected:
+    TextSize_e textSize;
     uint16_t textColor;
     bool checkBounds(uint16_t touchX, uint16_t touchY);
 
@@ -32,6 +44,8 @@ public:
 
     uint16_t getPosX(void);
     uint16_t getPosY(void);
+
+    void setTextSize(TextSize_e _textSize);
 
     void setText(char * _label);
 };

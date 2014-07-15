@@ -12,13 +12,23 @@
 #define GER_FAIL_OUT_OF_BOUNDS  1
 #define GER_FAIL_NO_SPACE       2
 
-#define BACKGROUND_COLOR        blackColour
+#define GUI_DEFAULT_BACKGROUND_COLOR        whiteColour
+#define GUI_DEFAULT_FOREGROUND_COLOR        blackColour
+#define GUI_DEFAULT_ACCENT_COLOR            redColour
 
 //struct TouchEvent_t
 //{
 //    int16_t x;
 //    int16_t y;
 //};
+
+// Type of touch being injected
+enum TouchType_e
+{
+    TOUCH_DOWN,
+    TOUCHING,
+    TOUCH_UP
+};
 
 class GUIElement;
 class GUIController;
@@ -36,19 +46,13 @@ protected:
         bool used;
     } elements[MAX_GUI_ELEMENTS];
 
-    // Type of touch being injected
-    enum TouchType_e
-    {
-        TOUCH_DOWN,
-        TOUCHING,
-        TOUCH_UP
-    };
+    uint16_t backgroundColor;
 
 public:
 
     LCD_screen_font * screen;
 
-    GUIController(LCD_screen_font& _screen);
+    GUIController(LCD_screen_font& _screen, uint16_t bg_color = GUI_DEFAULT_BACKGROUND_COLOR);
 
     void begin(void);
 
@@ -88,6 +92,8 @@ public:
 
     virtual uint16_t getPosX(void);
     virtual uint16_t getPosY(void);
+
+    virtual bool setPos(uint16_t x, uint16_t y);
 
     friend class GUIController;
 };

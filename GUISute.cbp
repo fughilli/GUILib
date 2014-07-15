@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GUISute" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/GUISute" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/GUISute" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../../cores/lm4f/Arduino.h" />
+		<Unit filename="../../cores/lm4f/Energia.h" />
+		<Unit filename="../../cores/lm4f/HardwareSerial.cpp" />
+		<Unit filename="../../cores/lm4f/HardwareSerial.h" />
+		<Unit filename="../../cores/lm4f/Print.cpp" />
+		<Unit filename="../../cores/lm4f/Print.h" />
+		<Unit filename="../../cores/lm4f/Printable.h" />
+		<Unit filename="../../cores/lm4f/Stream.cpp" />
+		<Unit filename="../../cores/lm4f/Stream.h" />
+		<Unit filename="../../cores/lm4f/Tone.cpp" />
+		<Unit filename="../../cores/lm4f/WCharacter.h" />
+		<Unit filename="../../cores/lm4f/WInterrupts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/WMath.cpp" />
+		<Unit filename="../../cores/lm4f/WString.cpp" />
+		<Unit filename="../../cores/lm4f/WString.h" />
+		<Unit filename="../../cores/lm4f/binary.h" />
+		<Unit filename="../../cores/lm4f/driverlib/adc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/adc.h" />
+		<Unit filename="../../cores/lm4f/driverlib/can.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/can.h" />
+		<Unit filename="../../cores/lm4f/driverlib/comp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/comp.h" />
+		<Unit filename="../../cores/lm4f/driverlib/cpu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/cpu.h" />
+		<Unit filename="../../cores/lm4f/driverlib/debug.h" />
+		<Unit filename="../../cores/lm4f/driverlib/eeprom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/eeprom.h" />
+		<Unit filename="../../cores/lm4f/driverlib/epi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/epi.h" />
+		<Unit filename="../../cores/lm4f/driverlib/ethernet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/ethernet.h" />
+		<Unit filename="../../cores/lm4f/driverlib/fan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/fan.h" />
+		<Unit filename="../../cores/lm4f/driverlib/flash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/flash.h" />
+		<Unit filename="../../cores/lm4f/driverlib/fpu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/fpu.h" />
+		<Unit filename="../../cores/lm4f/driverlib/gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/gpio.h" />
+		<Unit filename="../../cores/lm4f/driverlib/hibernate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/hibernate.h" />
+		<Unit filename="../../cores/lm4f/driverlib/i2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/i2c.h" />
+		<Unit filename="../../cores/lm4f/driverlib/i2s.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/i2s.h" />
+		<Unit filename="../../cores/lm4f/driverlib/interrupt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/interrupt.h" />
+		<Unit filename="../../cores/lm4f/driverlib/lpc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/lpc.h" />
+		<Unit filename="../../cores/lm4f/driverlib/mpu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/mpu.h" />
+		<Unit filename="../../cores/lm4f/driverlib/peci.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/peci.h" />
+		<Unit filename="../../cores/lm4f/driverlib/pin_map.h" />
+		<Unit filename="../../cores/lm4f/driverlib/pwm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/pwm.h" />
+		<Unit filename="../../cores/lm4f/driverlib/qei.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/qei.h" />
+		<Unit filename="../../cores/lm4f/driverlib/rom.h" />
+		<Unit filename="../../cores/lm4f/driverlib/rom_map.h" />
+		<Unit filename="../../cores/lm4f/driverlib/rtos_bindings.h" />
+		<Unit filename="../../cores/lm4f/driverlib/ssi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/ssi.h" />
+		<Unit filename="../../cores/lm4f/driverlib/sysctl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/sysctl.h" />
+		<Unit filename="../../cores/lm4f/driverlib/sysexc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/sysexc.h" />
+		<Unit filename="../../cores/lm4f/driverlib/systick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/systick.h" />
+		<Unit filename="../../cores/lm4f/driverlib/timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/timer.h" />
+		<Unit filename="../../cores/lm4f/driverlib/uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/uart.h" />
+		<Unit filename="../../cores/lm4f/driverlib/udma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/udma.h" />
+		<Unit filename="../../cores/lm4f/driverlib/usb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/usb.h" />
+		<Unit filename="../../cores/lm4f/driverlib/watchdog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/driverlib/watchdog.h" />
+		<Unit filename="../../cores/lm4f/inc/asmdefs.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_adc.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_can.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_comp.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_eeprom.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_epi.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_ethernet.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_fan.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_flash.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_gpio.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_hibernate.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_i2c.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_i2s.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_ints.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_lpc.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_memmap.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_nvic.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_peci.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_pwm.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_qei.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_ssi.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_sysctl.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_sysexc.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_timer.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_types.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_uart.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_udma.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_usb.h" />
+		<Unit filename="../../cores/lm4f/inc/hw_watchdog.h" />
+		<Unit filename="../../cores/lm4f/inc/lm4f120h5qr.h" />
+		<Unit filename="../../cores/lm4f/itoa.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/itoa.h" />
+		<Unit filename="../../cores/lm4f/main.cpp" />
+		<Unit filename="../../cores/lm4f/new.cpp" />
+		<Unit filename="../../cores/lm4f/new.h" />
+		<Unit filename="../../cores/lm4f/random.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/startup_gcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/wiring.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/wiring_analog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/wiring_digital.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/wiring_private.h" />
+		<Unit filename="../../cores/lm4f/wiring_pulse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../cores/lm4f/wiring_shift.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../LCDSuite/HI32_screen.cpp" />
+		<Unit filename="../LCDSuite/HI32_screen.h" />
+		<Unit filename="../LCDSuite/HY28A_screen.cpp" />
+		<Unit filename="../LCDSuite/HY28A_screen.h" />
+		<Unit filename="../LCDSuite/ILI9225B_screen.cpp" />
+		<Unit filename="../LCDSuite/ILI9225B_screen.h" />
+		<Unit filename="../LCDSuite/LCD_graphics.cpp" />
+		<Unit filename="../LCDSuite/LCD_graphics.h" />
+		<Unit filename="../LCDSuite/LCD_screen.cpp" />
+		<Unit filename="../LCDSuite/LCD_screen.h" />
+		<Unit filename="../LCDSuite/LCD_screen_font.cpp" />
+		<Unit filename="../LCDSuite/LCD_screen_font.h" />
+		<Unit filename="../LCDSuite/LCD_utilities.cpp" />
+		<Unit filename="../LCDSuite/LCD_utilities.h" />
+		<Unit filename="../LCDSuite/ST7735_screen.cpp" />
+		<Unit filename="../LCDSuite/ST7735_screen.h" />
+		<Unit filename="../LCDSuite/Terminal12e.h" />
+		<Unit filename="../LCDSuite/Terminal6e.h" />
+		<Unit filename="../LCDSuite/Terminal8e.h" />
+		<Unit filename="Button.cpp" />
+		<Unit filename="Button.h" />
+		<Unit filename="GUI.cpp" />
+		<Unit filename="GUI.h" />
+		<Unit filename="Label.cpp" />
+		<Unit filename="Label.h" />
+		<Unit filename="Slider.cpp" />
+		<Unit filename="Slider.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

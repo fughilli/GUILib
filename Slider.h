@@ -4,12 +4,12 @@
 #include "Energia.h"
 #include "GUI.h"
 
-#define SLIDER_BACKGROUND_COLOR blackColour
-#define SLIDER_LINE_COLOR       whiteColour
-#define SLIDER_HANDLE_COLOR     blueColour
-#define SLIDER_LINE_THICKNESS   4
-#define SLIDER_HANDLE_WIDTH     12
-#define SLIDER_HANDLE_HEIGHT    24
+#define SLIDER_BACKGROUND_COLOR GUI_DEFAULT_BACKGROUND_COLOR
+#define SLIDER_LINE_COLOR       GUI_DEFAULT_FOREGROUND_COLOR
+#define SLIDER_HANDLE_COLOR     GUI_DEFAULT_ACCENT_COLOR
+#define SLIDER_LINE_THICKNESS   6
+#define SLIDER_HANDLE_WIDTH     18
+#define SLIDER_HANDLE_HEIGHT    36
 
 enum SliderOrientation_t
 {
@@ -19,6 +19,8 @@ enum SliderOrientation_t
 
 class Slider : public GUIElement
 {
+private:
+    uint16_t prev_value;
 protected:
     SliderOrientation_t orientation;
     uint16_t length;

@@ -4,10 +4,10 @@
 #include "Energia.h"
 #include "GUI.h"
 
-#define BUTTON_BACKGROUND_COLOR blackColour
-#define BUTTON_FOREGROUND_COLOR whiteColour
-#define BUTTON_TEXT_COLOR       whiteColour
-#define BUTTON_MARGIN           4
+#define BUTTON_DEFAULT_BACKGROUND_COLOR GUI_DEFAULT_BACKGROUND_COLOR
+#define BUTTON_DEFAULT_FOREGROUND_COLOR GUI_DEFAULT_FOREGROUND_COLOR
+#define BUTTON_DEFAULT_TEXT_COLOR       GUI_DEFAULT_FOREGROUND_COLOR
+#define BUTTON_DEFAULT_MARGIN           4
 
 class Button : public GUIElement
 {
@@ -25,7 +25,11 @@ protected:
 
 public:
     char * label;
-    Button(uint16_t _posX, uint16_t _posY, uint8_t _zDepth, char * _label, uint16_t _width = 0, uint16_t _height = 0);
+    Button(uint16_t _posX, uint16_t _posY, uint8_t _zDepth, char * _label,
+           uint16_t _width = 0, uint16_t _height = 0,
+           uint16_t bg_color = BUTTON_DEFAULT_BACKGROUND_COLOR,
+           uint16_t fg_color = BUTTON_DEFAULT_FOREGROUND_COLOR,
+           uint16_t tx_color = BUTTON_DEFAULT_TEXT_COLOR);
 
     void registerTouchEventCallback(void (*onTouchCallback)(void));
 

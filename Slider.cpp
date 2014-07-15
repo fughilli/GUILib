@@ -10,6 +10,7 @@ Slider::Slider(uint16_t _posX, uint16_t _posY, uint8_t _zDepth, SliderOrientatio
     length = _length;
 
     value = 0;
+    prev_value = 0;
 
     hasTouchEventCallback = false;
     invalid = true;
@@ -69,6 +70,24 @@ void Slider::draw(bool clearBeforeDraw)
         guiController->screen->dRectangle(posX, posY, width, height, SLIDER_BACKGROUND_COLOR);
         guiController->screen->setPenSolid(false);
     }
+//    else
+//    {
+//        guiController->screen->setPenSolid(true);
+//        if(orientation == VERTICAL)
+//        {
+//
+//            guiController->screen->dRectangle(posX, posY + length - prev_value, SLIDER_HANDLE_HEIGHT, SLIDER_HANDLE_WIDTH, SLIDER_BACKGROUND_COLOR);
+//            guiController->screen->dLine(posX + ((width - SLIDER_LINE_THICKNESS)/2), posY + length - prev_value, 0, SLIDER_HANDLE_WIDTH, SLIDER_LINE_COLOR);
+//            guiController->screen->dLine(posX + ((width + SLIDER_LINE_THICKNESS)/2), posY + length - prev_value, 0, SLIDER_HANDLE_WIDTH, SLIDER_LINE_COLOR);
+//        }
+//        else
+//        {
+//            guiController->screen->dRectangle(posX + prev_value, posY, SLIDER_HANDLE_WIDTH, SLIDER_HANDLE_HEIGHT, SLIDER_BACKGROUND_COLOR);
+//            guiController->screen->dLine(posX + prev_value, posY + ((height - SLIDER_LINE_THICKNESS)/2), SLIDER_HANDLE_WIDTH, 0, SLIDER_LINE_COLOR);
+//            guiController->screen->dLine(posX + prev_value, posY + ((height + SLIDER_LINE_THICKNESS)/2), SLIDER_HANDLE_WIDTH, 0, SLIDER_LINE_COLOR);
+//        }
+//        guiController->screen->setPenSolid(false);
+//    }
 
     if(orientation == VERTICAL)
     {
@@ -84,6 +103,8 @@ void Slider::draw(bool clearBeforeDraw)
         guiController->screen->dRectangle(posX + value, posY, SLIDER_HANDLE_WIDTH, SLIDER_HANDLE_HEIGHT, SLIDER_HANDLE_COLOR);
         guiController->screen->setPenSolid(false);
     }
+
+    prev_value = value;
 
     invalid = false;
 }

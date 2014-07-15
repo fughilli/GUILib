@@ -8,10 +8,12 @@ Label::Label(uint16_t _posX, uint16_t _posY, uint8_t _zDepth, char * _label)
 
     label = _label;
 
-    textColor = LABEL_TEXT_COLOR;
+    textColor = LABEL_DEFAULT_TEXT_COLOR;
 
     hasTouchEventCallback = false;
     invalid = true;
+
+    textSize = LABEL_DEFAULT_TEXT_SIZE;
 }
 
 void Label::initialize(void)
@@ -43,14 +45,21 @@ void Label::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType)
 
 void Label::draw(bool clearBeforeDraw)
 {
-    if(clearBeforeDraw)
-    {
-        guiController->screen->setPenSolid();
-        guiController->screen->dRectangle(posX, posY, width, height, LABEL_BACKGROUND_COLOR);
-        guiController->screen->setPenSolid(false);
-    }
+//    if(clearBeforeDraw)
+//    {
+//        guiController->screen->setPenSolid();
+//        guiController->screen->dRectangle(posX, posY, width, height, LABEL_DEFAULT_BACKGROUND_COLOR);
+//        guiController->screen->setPenSolid(false);
+//    }
 
-    guiController->screen->gText(posX, posY, label, textColor);
+    uint8_t oldTextSize = guiController->screen->getFontSize();
+
+    uint8_t tempFontSize = (uint8_t)textSize;
+    guiController->screen->setFontSize(tempFontSize);
+
+    guiController->screen->gText(posX, posY, label, textColor, LABEL_DEFAULT_BACKGROUND_COLOR);
+
+    guiController->screen->setFontSize(oldTextSize);
 
     invalid = false;
 }
@@ -94,4 +103,9 @@ void Label::setColor(uint16_t _color)
 {
     invalid = true;
     textColor = _color;
+}
+
+void Label::setTextSize(TextSize_e _textSize)
+{
+    textSize = _textSize;
 }
