@@ -79,10 +79,17 @@ bool GUIController::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touc
 
     for(int i = 0; i < MAX_GUI_ELEMENTS; i++)
     {
-        if(elements[i].used &&
+        if(
+           // Is the element used? (Is there a GUIElement at this index?)
+           elements[i].used &&
+           // Does its AABB contain the touch point?
+                ((GUIElement*)(elements[i].ptr))->checkBounds(touchX - elements[i].ptr->getPosX(),
+                        touchY - elements[i].ptr->getPosY()) &&
+           // Is it higher in z-depth than any elements whose bounding boxes also matched?
+                (elements[i].ptr->zDepth >= maxZDepth) &&
+           // Do its true bounds contain the touch point?
                 elements[i].ptr->checkBounds(touchX - elements[i].ptr->getPosX(),
-                                             touchY - elements[i].ptr->getPosY()) &&
-                (elements[i].ptr->zDepth >= maxZDepth))
+                                             touchY - elements[i].ptr->getPosY()))
         {
             maxZDepth = elements[i].ptr->zDepth;
             maxZDepthIndex = i;
@@ -123,4 +130,17 @@ bool GUIElement::setPos(uint16_t x, uint16_t y)
         posX = x;
         posY = y;
     }
+}
+
+bool GUIElement::checkBounds(int16_t touchX, int16_t touchY)
+{
+    if
+    (
+        (touchX >= 0) && (touchX <= width) &&
+        (touchY >= 0) && (touchY <= height)
+    )
+    {
+        return true;
+    }
+    return false;
 }

@@ -22,20 +22,12 @@ void Label::initialize(void)
     height = guiController->screen->fontSizeY();
 }
 
-bool Label::checkBounds(uint16_t touchX, uint16_t touchY)
+bool Label::checkBounds(int16_t touchX, int16_t touchY)
 {
-    if
-    (
-        (touchX >= posX) && (touchX <= (posX + width)) &&
-        (touchY >= posY) && (touchY <= (posY + height))
-    )
-    {
-        return true;
-    }
-    return false;
+    return true;
 }
 
-void Label::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType)
+void Label::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType)
 {
     GUIElement::injectTouch(touchX, touchY, touchType);
 

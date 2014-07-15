@@ -36,20 +36,12 @@ void Button::initialize(void)
     }
 }
 
-bool Button::checkBounds(uint16_t touchX, uint16_t touchY)
+bool Button::checkBounds(int16_t touchX, int16_t touchY)
 {
-    if
-    (
-        (touchX >= posX) && (touchX <= (posX + width)) &&
-        (touchY >= posY) && (touchY <= (posY + height))
-    )
-    {
-        return true;
-    }
-    return false;
+    return true;
 }
 
-void Button::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType) :
+void Button::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType) :
     injectTouch(touchX, touchY, touchType)
 {
 

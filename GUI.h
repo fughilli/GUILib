@@ -16,12 +16,6 @@
 #define GUI_DEFAULT_FOREGROUND_COLOR        blackColour
 #define GUI_DEFAULT_ACCENT_COLOR            redColour
 
-//struct TouchEvent_t
-//{
-//    int16_t x;
-//    int16_t y;
-//};
-
 // Type of touch being injected
 enum TouchType_e
 {

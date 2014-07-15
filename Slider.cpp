@@ -30,20 +30,12 @@ void Slider::initialize(void)
     }
 }
 
-bool Slider::checkBounds(uint16_t touchX, uint16_t touchY)
+bool Slider::checkBounds(int16_t touchX, int16_t touchY)
 {
-    if
-    (
-        (touchX >= posX) && (touchX <= (posX + width)) &&
-        (touchY >= posY) && (touchY <= (posY + height))
-    )
-    {
-        return true;
-    }
-    return false;
+    return true;
 }
 
-void Slider::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType)
+void Slider::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType)
 {
     GUIElement::injectTouch(touchX, touchY, touchType);
 
@@ -51,11 +43,11 @@ void Slider::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType
 
     if(orientation == VERTICAL)
     {
-        value = constrain((int16_t)length - (touchY - posY) + SLIDER_HANDLE_WIDTH/2, 0, length);
+        value = constrain(length - touchY + SLIDER_HANDLE_WIDTH/2, 0, length);
     }
     else
     {
-        value = constrain((int16_t)touchX - posX - SLIDER_HANDLE_WIDTH/2, 0, length);
+        value = constrain(touchX - SLIDER_HANDLE_WIDTH/2, 0, length);
     }
 
     if(hasTouchEventCallback)
