@@ -72,14 +72,17 @@ uint8_t GUIController::registerGUIElement(GUIElement& newElement)
     return GER_FAIL_NO_SPACE;
 }
 
-bool GUIController::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType)
+bool GUIController::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType)
 {
     uint8_t maxZDepth = 0;
     int maxZDepthIndex = -1;
 
     for(int i = 0; i < MAX_GUI_ELEMENTS; i++)
     {
-        if(elements[i].used && elements[i].ptr->checkBounds(touchX, touchY) && (elements[i].ptr->zDepth >= maxZDepth))
+        if(elements[i].used &&
+                elements[i].ptr->checkBounds(touchX - elements[i].ptr->getPosX(),
+                                             touchY - elements[i].ptr->getPosY()) &&
+                (elements[i].ptr->zDepth >= maxZDepth))
         {
             maxZDepth = elements[i].ptr->zDepth;
             maxZDepthIndex = i;
@@ -92,12 +95,13 @@ bool GUIController::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e to
     }
     else
     {
-        elements[maxZDepthIndex].ptr->injectTouch(touchX, touchY, touchType);
-        return true;
+        elements[maxZDepthIndex].ptr->injectTouch((touchX - elements[maxZDepthIndex].ptr->getPosX(),
+                (touchY - elements[maxZDepthIndex].ptr->getPosY(), touchType);
+                return true;
     }
 }
 
-void GUIElement::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType)
+void GUIElement::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType)
 {
     switch(touchType)
     {
@@ -113,8 +117,8 @@ void GUIElement::injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touch
 bool GUIElement::setPos(uint16_t x, uint16_t y)
 {
     if(((width + x) <= guiController->screen->screenSizeX()) &&
-       ((height + y) <= guiController->screen->screenSizeY()) &&
-       (x >= 0) && (y >= 0))
+            ((height + y) <= guiController->screen->screenSizeY()) &&
+            (x >= 0) && (y >= 0))
     {
         posX = x;
         posY = y;

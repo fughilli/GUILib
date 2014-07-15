@@ -58,7 +58,7 @@ public:
 
     void draw(void);
 
-    bool injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType);
+    bool injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType);
 
     uint8_t registerGUIElement(GUIElement& newElement);
 };
@@ -75,9 +75,9 @@ protected:
 
     GUIController * guiController;
 
-    virtual bool checkBounds(uint16_t touchX, uint16_t touchY);
+    virtual bool checkBounds(int16_t touchX, int16_t touchY);
 
-    virtual void injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType);
+    virtual void injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType);
 
     virtual void draw(bool clearBeforeDraw);
 

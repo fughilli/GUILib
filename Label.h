@@ -23,9 +23,9 @@ class Label : public GUIElement
 protected:
     TextSize_e textSize;
     uint16_t textColor;
-    bool checkBounds(uint16_t touchX, uint16_t touchY);
+    bool checkBounds(int16_t touchX, int16_t touchY);
 
-    void injectTouch(uint16_t touchX, uint16_t touchY, TouchType_e touchType);
+    void injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType);
 
     void draw(bool clearBeforeDraw);
 
