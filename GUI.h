@@ -16,6 +16,9 @@
 #define GUI_DEFAULT_FOREGROUND_COLOR        blackColour
 #define GUI_DEFAULT_ACCENT_COLOR            redColour
 
+#define GUIDebugPrintln(__a__) Serial.println((__a__))
+#define GUIDebugPrint(__a__) Serial.print((__a__))
+
 // Type of touch being injected
 enum TouchType_e
 {

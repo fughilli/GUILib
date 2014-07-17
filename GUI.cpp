@@ -74,22 +74,28 @@ uint8_t GUIController::registerGUIElement(GUIElement& newElement)
 
 bool GUIController::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType)
 {
+    GUIDebugPrint("injectTouch: ");
+    GUIDebugPrint(touchX);
+    GUIDebugPrint("\t");
+    GUIDebugPrintln(touchY);
+
     uint8_t maxZDepth = 0;
     int maxZDepthIndex = -1;
 
     for(int i = 0; i < MAX_GUI_ELEMENTS; i++)
     {
         if(
-           // Is the element used? (Is there a GUIElement at this index?)
-           elements[i].used &&
-           // Does its AABB contain the touch point?
-                ((GUIElement*)(elements[i].ptr))->checkBounds(touchX - elements[i].ptr->getPosX(),
-                        touchY - elements[i].ptr->getPosY()) &&
-           // Is it higher in z-depth than any elements whose bounding boxes also matched?
-                (elements[i].ptr->zDepth >= maxZDepth) &&
-           // Do its true bounds contain the touch point?
-                elements[i].ptr->checkBounds(touchX - elements[i].ptr->getPosX(),
-                                             touchY - elements[i].ptr->getPosY()))
+            // Is the element used? (Is there a GUIElement at this index?)
+            elements[i].used &&
+            // Does its AABB contain the touch point?
+            ((GUIElement*)(elements[i].ptr))->checkBounds(touchX - elements[i].ptr->getPosX(),
+                    touchY - elements[i].ptr->getPosY()) &&
+            // Do its true bounds contain the touch point?
+            elements[i].ptr->checkBounds(touchX - elements[i].ptr->getPosX(),
+                                         touchY - elements[i].ptr->getPosY()) &&
+            // Is it higher in z-depth than any elements whose bounding boxes also matched?
+            (elements[i].ptr->zDepth >= maxZDepth)
+        )
         {
             maxZDepth = elements[i].ptr->zDepth;
             maxZDepthIndex = i;
@@ -102,9 +108,10 @@ bool GUIController::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touc
     }
     else
     {
-        elements[maxZDepthIndex].ptr->injectTouch((touchX - elements[maxZDepthIndex].ptr->getPosX(),
-                (touchY - elements[maxZDepthIndex].ptr->getPosY(), touchType);
-                return true;
+        GUIDebugPrintln("touching something...");
+        elements[maxZDepthIndex].ptr->injectTouch(touchX - elements[maxZDepthIndex].ptr->getPosX(),
+                touchY - elements[maxZDepthIndex].ptr->getPosY(), touchType);
+        return true;
     }
 }
 

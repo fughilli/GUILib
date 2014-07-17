@@ -41,10 +41,9 @@ bool Button::checkBounds(int16_t touchX, int16_t touchY)
     return true;
 }
 
-void Button::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType) :
-    injectTouch(touchX, touchY, touchType)
+void Button::injectTouch(int16_t touchX, int16_t touchY, TouchType_e touchType)
 {
-
+    GUIElement::injectTouch(touchX, touchY, touchType);
     if(hasTouchEventCallback)
         onTouchCallback();
 }
